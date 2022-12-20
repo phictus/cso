@@ -8,21 +8,17 @@ int32_t main()
 
     uint32_t t;
     cin >> t;
-    while (t > 0)
-    {
+    while (t > 0) {
         uint64_t n;
         cin >> n;
 
-        for (uint64_t i = 2; i * i <= n; i++)
-        {
-            if (!(n % i))
-            {
+        for (uint64_t i = 2; i * i <= n; i++) {
+            if (!(n % i)) {
                 uint64_t x = n / i;
-                for (uint64_t j = i + 1; j * j < x; j++)
-                {
-                    if (!(x % j))
-                    {
-                        cout << "YES" << '\n' << i << ' ' << j << ' ' << x / j << '\n';
+                for (uint64_t j = i + 1; j * j < x; j++) {
+                    if (!(x % j)) {
+                        cout << "YES" << '\n'
+                             << i << ' ' << j << ' ' << x / j << '\n';
                         goto LABEL_0;
                     }
                 }
@@ -31,7 +27,7 @@ int32_t main()
 
         cout << "NO" << '\n';
 
-        LABEL_0:
+    LABEL_0:
         t--;
     }
 

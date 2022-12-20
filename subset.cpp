@@ -13,8 +13,7 @@ void print_subsets(vector<uint32_t>::iterator element)
         cout << e << ' ';
     cout << '\n';
 
-    for (auto e = element; e != set.end(); e++)
-    {
+    for (auto e = element; e != set.end(); e++) {
         subset.push_back(*e);
         print_subsets(e + 1);
         subset.pop_back();
@@ -25,8 +24,7 @@ int32_t main()
 {
     ios_base::sync_with_stdio(false);
 
-    while (true)
-    {
+    while (true) {
         uint32_t input;
         cin >> input;
         if (input == 0)

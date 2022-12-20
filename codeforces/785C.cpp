@@ -9,15 +9,13 @@ int32_t main()
     uint64_t n, m;
     cin >> n >> m;
 
-    if (m >= n)
-    {
+    if (m >= n) {
         cout << n << '\n';
         return 0;
     }
 
     uint64_t i = 1, j = 1;
-    while (j < n - m)
-    {
+    while (j < n - m) {
         i++;
         j += i;
     }

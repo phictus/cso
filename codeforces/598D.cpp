@@ -17,8 +17,7 @@ void dfs(uint32_t x, uint32_t y, int64_t& result, size_t index)
 
     mark[x][y] = index;
 
-    for (size_t i = 0; i < 4; i++)
-    {
+    for (size_t i = 0; i < 4; i++) {
         int32_t nx = x + g[i];
         int32_t ny = y + h[i];
         if (nx < 0 || ny < 0 || x >= n || y >= m)
@@ -37,8 +36,7 @@ int32_t main()
 
     cin >> n >> m >> k;
     for (size_t i = 0; i < n; i++)
-        for (size_t j = 0; j < m; j++)
-        {
+        for (size_t j = 0; j < m; j++) {
             mark[i][j] = -1;
             char in;
             cin >> in;
@@ -49,19 +47,16 @@ int32_t main()
         }
 
     uint64_t results[k];
-    for (size_t i = 0; i < k; i++)
-    {
+    for (size_t i = 0; i < k; i++) {
         size_t x, y;
         cin >> x >> y;
 
         int64_t result = mark[x - 1][y - 1];
-        if (result == -1)
-        {
+        if (result == -1) {
             result = 0;
             dfs(x - 1, y - 1, result, i);
             results[i] = result;
-        }
-        else
+        } else
             result = results[result];
 
         cout << result << '\n';
